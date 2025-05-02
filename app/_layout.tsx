@@ -1,22 +1,20 @@
 import { Stack } from 'expo-router';
-import { colorScheme, useColorScheme } from "nativewind";
+import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
 
 import '@/global.css';
 
 function RootLayoutNav() {
   return (
-    <Stack>
-      <Stack.Screen name="(main)" options={{ headerShown: false }} />
-      <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-    </Stack>
+    <GluestackUIProvider>
+      <Stack>
+        <Stack.Screen name="(main)" options={{ headerShown: false }} />
+        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+      </Stack>
+    </GluestackUIProvider>
   );
 }
 
 export default function RootLayout() {
-  const { setColorScheme } = useColorScheme();
-  setColorScheme("dark");
-  colorScheme.set("dark");
-
   return (
     <>
       <RootLayoutNav />
