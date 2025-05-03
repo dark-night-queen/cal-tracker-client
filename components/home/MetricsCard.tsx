@@ -6,11 +6,9 @@ import { MicronutrientCard } from './MicronutrientCard';
 
 export const MetricsCard = () => {
   return (
-    <Box className="flex-row justify-between gap-4">
+    <Box className="flex-row gap-4">
       <HealthScore />
       <MicronutrientCard />
     </Box>
   );
 };
-
-const styles = ({});

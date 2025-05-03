@@ -2,12 +2,11 @@ import React, { useMemo } from 'react';
 import moment, { Moment } from 'moment';
 import { useCalendarStore } from '@/store/weekly-calendar';
 
-import { Pressable } from 'react-native';
 import { Box } from '../ui/box';
+import { Button, ButtonIcon, ButtonText } from '../ui/button';
 import { Card } from '../ui/card';
-import { Button, ButtonText } from '../ui/button';
+import { ChevronLeftIcon, ChevronRightIcon } from '../ui/icon';
 import { Text } from '../ui/text';
-import { Icon, ChevronLeftIcon, ChevronRightIcon } from '../ui/icon';
 
 export const WeeklyCalendar = () => {
   const { activeDate, currentDate, currentWeek, navigateWeek, setActiveDate } = useCalendarStore();
@@ -35,24 +34,19 @@ export const WeeklyCalendar = () => {
   return (
     <Card variant="ghost" className="gap-5 px-0">
       <Box className={styles.navContainer}>
-        <Pressable onPress={() => navigateWeek('prev')}>
-          {({ pressed }) => (
-            <Box className={`rounded-md p-2 ${pressed ? 'bg-background-200/60 ' : ''}`}>
-              <Icon as={ChevronLeftIcon} />
-            </Box>
-          )}
-        </Pressable>
-        <Text className='font-semibold'>{navTitle}</Text>
-        <Pressable
+        <Button variant="ghost" className={`p-2`} onPress={() => navigateWeek('prev')}>
+          <ButtonIcon as={ChevronLeftIcon} />
+        </Button>
+
+        <Text className="font-semibold">{navTitle}</Text>
+
+        <Button
+          variant="ghost"
+          className={`p-2`}
           onPress={() => navigateWeek('next')}
-          disabled={!allowNextNavigation}
-          style={{ opacity: allowNextNavigation ? 1 : 0.3 }}>
-          {({ pressed }) => (
-            <Box className={`rounded-md p-2 ${pressed ? 'bg-background-200/60 ' : ''}`}>
-              <Icon as={ChevronRightIcon} />
-            </Box>
-          )}
-        </Pressable>
+          disabled={!allowNextNavigation}>
+          <ButtonIcon as={ChevronRightIcon} className={!allowNextNavigation ? 'opacity-40' : ''} />
+        </Button>
       </Box>
 
       <Box className={styles.navContainer}>

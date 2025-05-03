@@ -166,8 +166,8 @@ const ProgressGradientTrack = React.forwardRef<
   const { size: parentSize, orientation: parentOrientation, value } = useStyleContext(SCOPE);
 
   const progressStyle = parentOrientation === 'vertical'
-    ? { height: `${value}`, width: '100%' }
-    : { width: `${value}`, height: '100%' };
+    ? { height: `${value}%`, width: '100%' }
+    : { width: `${value}%`, height: '100%' };
 
   return (
     <LinearGradient

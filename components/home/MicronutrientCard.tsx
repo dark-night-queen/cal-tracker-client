@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apple } from 'lucide-react-native';
+import { Apple, Info } from 'lucide-react-native';
 import { Card } from '../ui/card';
 import { Text } from '../ui/text';
 import { Icon } from '../ui/icon';
@@ -8,10 +8,10 @@ import { Box } from '../ui/box';
 export const MicronutrientCard = () => {
   const micronutrients = [
     { name: 'Fiber', value: 5 },
-    { name: 'Vitamin C', value: 70 },
-    { name: 'Calcium', value: 40 },
-    { name: 'Iron', value: 45 },
-    { name: 'Potassium', value: 65 },
+    { name: 'Vitamin C', value: 7 },
+    { name: 'Calcium', value: 4 },
+    { name: 'Iron', value: 4 },
+    { name: 'Potassium', value: 5 },
   ];
 
   const getColor = (percent: number) => {
@@ -24,7 +24,8 @@ export const MicronutrientCard = () => {
     <Card className={styles.cardContainer}>
       <Box className={styles.cardHeader}>
         <Icon as={Apple} className={styles.iconColor} />
-        <Text>Micronutrients</Text>
+        <Text className='flex-1'>Micronutrients</Text>
+        <Icon as={Info} size="sm" />
       </Box>
 
       <Box className={styles.micronutrientContainer}>
@@ -40,9 +41,9 @@ export const MicronutrientCard = () => {
 };
 
 const styles = {
-  cardContainer: 'gap-4 flex-[1]',
+  cardContainer: 'gap-4 flex-1',
   cardHeader: 'flex-row items-center gap-2',
   iconColor: 'text-indigo-400',
-  micronutrientContainer: 'flex-row items-center justify-between gap-2',
+  micronutrientContainer: 'flex-row items-center justify-between',
   text: 'text-xs text-background-400',
 };

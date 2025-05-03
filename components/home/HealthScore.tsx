@@ -11,8 +11,8 @@ export const HealthScore = () => {
     <Card className={styles.cardContainer}>
       <Box className={styles.cardHeader}>
         <Icon as={Activity} className={styles.iconColor} />
-        <Text>Health Score</Text>
-        <Icon as={Info} />
+        <Text className='flex-1'>Health Score</Text>
+        <Icon as={Info} size="sm" />
       </Box>
 
       <Box>
@@ -30,7 +30,7 @@ export const HealthScore = () => {
 };
 
 const styles = {
-  cardContainer: 'gap-4',
+  cardContainer: 'flex-1 gap-4',
   cardHeader: 'flex-row items-center gap-3',
   iconColor: 'text-indigo-400',
 };
