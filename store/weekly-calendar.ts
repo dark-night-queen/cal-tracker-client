@@ -9,8 +9,6 @@ interface CalendarState {
   setActiveDate: (date: Moment) => void;
 }
 
-
-
 export const useCalendarStore = create<CalendarState>((set, get) => ({
   activeDate: moment(),
   currentDate: moment(),
