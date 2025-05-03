@@ -1,7 +1,7 @@
 import moment, { Moment } from 'moment';
 import { create } from 'zustand';
 
-export interface CalendarState {
+interface CalendarState {
   activeDate: Moment;
   currentDate: Moment;
   currentWeek: Moment[];

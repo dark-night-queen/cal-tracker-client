@@ -32,7 +32,7 @@ export const WeeklyCalendar = () => {
   const allowNextNavigation = currentDate.isBefore(moment(), 'isoWeek');
 
   return (
-    <Card variant="ghost" className="gap-5 px-0">
+    <Card variant="ghost" className="gap-5 px-0 pb-0">
       <Box className={styles.navContainer}>
         <Button variant="ghost" className={`p-2`} onPress={() => navigateWeek('prev')}>
           <ButtonIcon as={ChevronLeftIcon} />

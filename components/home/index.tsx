@@ -3,18 +3,22 @@ import { DailyReport } from './DailyReport';
 import { MacroCard } from './MacroCard';
 import { MetricsCard } from './MetricsCard';
 import { RecentlyLogged } from './RecentlyLogged';
+import { PersonalizedRecommendation } from './Recommendation';
 import { ScannerButton } from './ScannerButton';
 import { WeeklyCalendar } from './WeeklyCalendar';
 
 export const HomeComponent = () => {
   return (
-    <Box className="h-full gap-5 px-5 dark:bg-gray-900">
-      <WeeklyCalendar />
-      <MacroCard />
-      <MetricsCard />
-      <ScannerButton />
+    <Box className="h-full gap-8 px-5 pb-8 dark:bg-gray-900">
+      <Box className="gap-4">
+        <WeeklyCalendar />
+        <MacroCard />
+        <MetricsCard />
+        <ScannerButton />
+      </Box>
       <RecentlyLogged />
       <DailyReport />
+      <PersonalizedRecommendation />
     </Box>
   );
 };
