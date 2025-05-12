@@ -8,13 +8,13 @@ import { GhostButton } from '../GhostButton';
 import { useColorScheme } from 'nativewind';
 
 export const Settings = () => {
-  const { toggleColorScheme } = useColorScheme();
+  const { toggleColorScheme, colorScheme } = useColorScheme();
 
   return (
     <Box className="gap-4">
       <Text className={styles.header}>Settings</Text>
 
-      <GhostButton icon={Moon} name="Dark Mode" onClick={toggleColorScheme} />
+      <GhostButton icon={Moon} name={`${colorScheme} Mode`} onClick={toggleColorScheme} />
       <GhostButton icon={Bell} name="Notification" />
     </Box>
   );
