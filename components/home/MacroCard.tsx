@@ -8,15 +8,15 @@ import { useNutrientStore } from '@/store/nutrients-store';
 type IMacroCircleProps = {
   name: string;
   value: number;
-  total: number;
+  target: number;
   tintColor?: string;
 };
 
 const MacroCircle = (props: IMacroCircleProps) => {
-  const { name, value, total, ...otherProps } = props;
+  const { name, value, target, ...otherProps } = props;
 
-  const fill = (value / total) * 100;
-  const valueLeft = total - value;
+  const fill = (value / target) * 100;
+  const valueLeft = target - value;
 
   return (
     <Box className={styles.macroCircle}>
@@ -32,17 +32,17 @@ const MacroCircle = (props: IMacroCircleProps) => {
 export const MacroCard = () => {
   const {
     caloriesConsumed,
-    totalCalories,
+    targetCalories,
     proteinConsumed,
-    totalProtein,
+    targetProtein,
     carbsConsumed,
-    totalCarbs,
+    targetCarbs,
     fatsConsumed,
-    totalFats,
+    targetFats,
   } = useNutrientStore();
 
-  const calorieFill = (caloriesConsumed / totalCalories) * 100;
-  const calorieLeft = totalCalories - caloriesConsumed;
+  const calorieFill = (caloriesConsumed / targetCalories) * 100;
+  const calorieLeft = targetCalories - caloriesConsumed;
 
   return (
     <Card className={styles.cardContainer}>
@@ -62,11 +62,11 @@ export const MacroCard = () => {
           <MacroCircle
             name="Protein"
             value={proteinConsumed}
-            total={totalProtein}
+            target={targetProtein}
             tintColor="#EF4444"
           />
-          <MacroCircle name="Carbs" value={carbsConsumed} total={totalCarbs} tintColor="#F59E0B" />
-          <MacroCircle name="Fat" value={fatsConsumed} total={totalFats} tintColor="#3B82F6" />
+          <MacroCircle name="Carbs" value={carbsConsumed} target={targetCarbs} tintColor="#F59E0B" />
+          <MacroCircle name="Fat" value={fatsConsumed} target={targetFats} tintColor="#3B82F6" />
         </Box>
       </Box>
     </Card>

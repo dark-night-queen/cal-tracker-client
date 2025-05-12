@@ -2,7 +2,7 @@ import { Box } from '../ui/box';
 import { DailyReport } from './DailyReport';
 import { MacroCard } from './MacroCard';
 import { MetricsCard } from './MetricsCard';
-import { RecentlyLogged } from './RecentlyLogged';
+import { RecentlyLoggedItem } from './RecentlyLoggedItem';
 import { PersonalizedRecommendation } from './Recommendation';
 import { ScannerButton } from './ScannerButton';
 import { WeeklyCalendar } from './WeeklyCalendar';
@@ -16,7 +16,7 @@ export const HomeComponent = () => {
         <MetricsCard />
         <ScannerButton />
       </Box>
-      <RecentlyLogged />
+      <RecentlyLoggedItem />
       <DailyReport />
       <PersonalizedRecommendation />
     </Box>

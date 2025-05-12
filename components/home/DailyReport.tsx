@@ -6,13 +6,35 @@ import { Card } from '../ui/card';
 import { Icon } from '../ui/icon';
 import { Clock, Utensils, TrendingUp } from 'lucide-react-native';
 import { Progress, ProgressFilledTrack } from '../ui/progress';
+import { useCalendarStore } from '@/store/weekly-calendar';
+import { useNutrientStore } from '@/store/nutrients-store';
 
 export const DailyReport = () => {
-  const timestamp = moment().format('MMM DD, YYYY');
-  const caloriesConsumed = 400;
-  const targetCalories = 1458;
+  const { activeDate } = useCalendarStore();
+  const timestamp = activeDate.format('MMM DD, YYYY');
+
+  const {
+    caloriesConsumed,
+    targetCalories,
+    proteinConsumed,
+    targetProtein,
+    carbsConsumed,
+    targetCarbs,
+    fatsConsumed,
+    targetFats,
+  } = useNutrientStore();
 
   const percentageConsumed = (caloriesConsumed / targetCalories) * 100;
+  const percentageProteinConsumed = (proteinConsumed / targetProtein) * 100;
+  const percentageCarbsConsumed = (carbsConsumed / targetCarbs) * 100;
+  const percentageFatsConsumed = (fatsConsumed / targetFats) * 100;
+
+  const getCalorieStatus = () => {
+    if (percentageConsumed > 105) return 'high';
+    if (percentageConsumed > 95) return 'warning';
+    return 'good';
+  };
+  const status = getCalorieStatus();
 
   const statusBg = {
     high: 'bg-rose-400/10',
@@ -26,16 +48,9 @@ export const DailyReport = () => {
     good: 'bg-emerald-500',
   };
 
-  const getCalorieStatus = () => {
-    if (percentageConsumed > 105) return 'high';
-    if (percentageConsumed > 95) return 'warning';
-    return 'good';
-  };
-  const status = getCalorieStatus();
-
   return (
     <Box className="gap-4">
-      <Box className="flex-row items-center gap-4 mb-2">
+      <Box className="mb-2 flex-row items-center gap-4">
         <Divider className="flex-1 text-gray-400" />
         <Text className="text-sm text-gray-400">Daily Report</Text>
         <Divider className="flex-1 text-gray-400" />
@@ -81,15 +96,21 @@ export const DailyReport = () => {
 
         <Box className="flex-row justify-around">
           <Box className="items-center">
-            <Text className="text-base font-bold tabular-nums text-rose-400">15.00%</Text>
+            <Text className="text-base font-bold tabular-nums text-rose-400">
+              {percentageProteinConsumed.toFixed(2)}%
+            </Text>
             <Text className="text-xs text-gray-400">Protein</Text>
           </Box>
           <Box className="items-center">
-            <Text className="text-base font-bold tabular-nums text-amber-400">15.00%</Text>
+            <Text className="text-base font-bold tabular-nums text-amber-400">
+              {percentageCarbsConsumed.toFixed(2)}%
+            </Text>
             <Text className="text-xs text-gray-400">Carbs</Text>
           </Box>
           <Box className="items-center">
-            <Text className="text-base font-bold tabular-nums text-blue-400">15.00%</Text>
+            <Text className="text-base font-bold tabular-nums text-blue-400">
+              {percentageFatsConsumed.toFixed(2)}%
+            </Text>
             <Text className="text-xs text-gray-400">Fat</Text>
           </Box>
         </Box>
