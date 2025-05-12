@@ -5,7 +5,7 @@ import '@/global.css';
 
 function RootLayoutNav() {
   return (
-    <GluestackUIProvider mode="system">
+    <GluestackUIProvider mode="dark">
       <Stack>
         <Stack.Screen name="(main)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
