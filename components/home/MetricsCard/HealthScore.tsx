@@ -1,10 +1,10 @@
 import React from 'react';
 import { Activity, Info } from 'lucide-react-native';
-import { Card } from '../ui/card';
-import { Text } from '../ui/text';
-import { Icon } from '../ui/icon';
-import { Box } from '../ui/box';
-import { Progress, ProgressGradientTrack } from '../ui/progress';
+import { Card } from '@/components/ui/card';
+import { Text } from '@/components/ui/text';
+import { Icon } from '@/components/ui/icon';
+import { Box } from '@/components/ui/box';
+import { Progress, ProgressGradientTrack } from '@/components/ui/progress';
 import { useNutrientStore } from '@/store/nutrients-store';
 
 export const HealthScore = () => {
