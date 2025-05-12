@@ -9,12 +9,12 @@ type IGhostButtonProps = {
   name: string;
   showArrow?: boolean;
   value?: string;
-  onClick?: any;
+  onPress?: any;
 };
 
-export const GhostButton = ({ icon, name, showArrow, value, onClick }: IGhostButtonProps) => {
+export const GhostButton = ({ icon, name, showArrow, value, onPress }: IGhostButtonProps) => {
   return (
-    <Button variant="ghost" className={styles.button} onPress={onClick}>
+    <Button variant="ghost" className={styles.button} onPress={onPress}>
       <Box className={styles.buttonIconContainer}>
         <ButtonIcon as={icon} className={styles.buttonIcon} />
       </Box>

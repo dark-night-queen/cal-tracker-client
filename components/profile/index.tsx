@@ -4,7 +4,7 @@ import { Button, ButtonIcon, ButtonText } from '@/components/ui/button';
 
 import { Menu } from './MenuSection';
 import { Stats } from './StatsSection';
-import { User } from './User';
+import { User } from './UserSection';
 
 export const ProfileComponent = () => {
   return (
