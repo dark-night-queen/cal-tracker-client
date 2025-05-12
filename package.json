@@ -14,6 +14,7 @@
   "dependencies": {
     "@expo/ngrok": "^4.1.3",
     "@expo/vector-icons": "expo/vector-icons",
+    "@gluestack-ui/avatar": "^0.1.18",
     "@gluestack-ui/button": "^1.0.14",
     "@gluestack-ui/divider": "^0.1.10",
     "@gluestack-ui/icon": "^0.1.27",
