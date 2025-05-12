@@ -20,7 +20,7 @@ const CustomCard = ({ icon, className, name, value }: ICustomCard) => {
         <Icon as={icon} className={className} />
         <Text className="text-xs text-gray-400">{name}</Text>
       </Box>
-      <Text className="text-lg font-semibold text-white">{value}</Text>
+      <Text className="text-lg font-semibold">{value}</Text>
     </Card>
   );
 };
@@ -33,7 +33,14 @@ export const Stats = () => {
         <CustomCard icon={Target} className="text-green-400" value="55 kg" name="Target Weight" />
       </Box>
 
-      <CustomCard icon={Flame} className="text-orange-400" value="1458 kcal" name="Daily Calorie Target" />
+      <Box className="flex-row gap-4">
+        <CustomCard
+          icon={Flame}
+          className="text-orange-400"
+          value="1458 kcal"
+          name="Daily Calorie Target"
+        />
+      </Box>
     </Box>
   );
 };

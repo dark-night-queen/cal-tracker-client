@@ -1,10 +1,14 @@
+import { ScrollView } from 'react-native';
 import { ProfileComponent } from '@/components/profile';
-import { View } from 'react-native';
+import { useColorScheme } from 'nativewind';
+import { Colors } from '@/lib/utils/Colors';
 
 export default function Profile() {
+  const { colorScheme } = useColorScheme();
+
   return (
-    <View>
+    <ScrollView style={[Colors[colorScheme!]]}>
       <ProfileComponent />
-    </View>
+    </ScrollView>
   );
 }

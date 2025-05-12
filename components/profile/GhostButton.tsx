@@ -30,9 +30,10 @@ export const GhostButton = ({ icon, name, showArrow, value, onClick }: IGhostBut
 
 const styles = {
   button: 'items-center justify-start gap-4 p-4',
-  buttonIconContainer: 'flex h-8 w-8 items-center justify-center rounded-lg bg-gray-800',
+  buttonIconContainer:
+    'flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-gray-800',
   buttonIcon: 'text-indigo-400',
-  buttonText: 'color-white flex-1',
+  buttonText: 'flex-1 text-sm font-medium capitalize',
 
   arrowIcon: 'text-gray-600',
   menuContainer: 'flex-row items-center gap-2',

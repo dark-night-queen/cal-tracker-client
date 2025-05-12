@@ -9,7 +9,7 @@ import { WeeklyCalendar } from './WeeklyCalendar';
 
 export const HomeComponent = () => {
   return (
-    <Box className="h-full gap-8 px-5 pb-8 dark:bg-gray-900">
+    <Box className="gap-8 px-5 pb-8 dark:bg-gray-900">
       <Box className="gap-4">
         <WeeklyCalendar />
         <MacroCard />
