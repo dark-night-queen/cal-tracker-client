@@ -66,5 +66,8 @@
     "extends": "universe/native",
     "root": true
   },
+  "engines": {
+    "node": ">=20.18.1"
+  },
   "private": true
 }
