@@ -8,7 +8,7 @@ function RootLayoutNav() {
     <GluestackUIProvider mode="dark">
       <Stack>
         <Stack.Screen name="(main)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="modal" options={{ headerShown: false, presentation: 'modal' }} />
       </Stack>
     </GluestackUIProvider>
   );
