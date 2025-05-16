@@ -29,9 +29,9 @@ export const GhostButton = ({ icon, name, showArrow, value, onPress }: IGhostBut
 };
 
 const styles = {
-  button: 'items-center justify-start gap-4 p-4',
+  button: 'items-center justify-start gap-4',
   buttonIconContainer:
-    'flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-gray-800',
+    'h-8 w-8 items-center justify-center rounded-lg bg-background-0 dark:bg-gray-800',
   buttonIcon: 'text-indigo-400',
   buttonText: 'flex-1 text-sm font-medium capitalize',
 

@@ -14,11 +14,11 @@ export const ProfileComponent = () => {
       <Menu />
 
       <Box className="gap-4">
-        <Button variant="outline" action="warning" className="py-4">
+        <Button variant="outline" action="warning">
           <ButtonText>Reset Onboarding</ButtonText>
         </Button>
 
-        <Button variant="ghost" className="py-4">
+        <Button variant="ghost">
           <ButtonIcon as={LogOut} />
           <ButtonText>Sign Out</ButtonText>
         </Button>

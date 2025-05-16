@@ -34,7 +34,7 @@ export const WeeklyCalendar = () => {
   return (
     <Card variant="ghost" className="gap-5 px-0 pb-0">
       <Box className={styles.navContainer}>
-        <Button variant="ghost" className={`p-2`} onPress={() => navigateWeek('prev')}>
+        <Button variant="ghost" className="p-2" onPress={() => navigateWeek('prev')}>
           <ButtonIcon as={ChevronLeftIcon} />
         </Button>
 
@@ -42,7 +42,7 @@ export const WeeklyCalendar = () => {
 
         <Button
           variant="ghost"
-          className={`p-2`}
+          className="p-2"
           onPress={() => navigateWeek('next')}
           disabled={!allowNextNavigation}>
           <ButtonIcon as={ChevronRightIcon} className={!allowNextNavigation ? 'opacity-40' : ''} />
