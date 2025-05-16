@@ -3,9 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yarn install
         - nvm use 20.18.1
         - node -v
+        - yarn install
         - npm install --silent --global expo-cli
         - |-
           if [ -f yarn.lock ]; then
