@@ -3,20 +3,17 @@
     "name": "food-scan-app",
     "slug": "food-scan-app",
     "version": "1.0.0",
-
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-
     "experiments": {
       "typedRoutes": true
     },
     "plugins": [
       "expo-router"
     ],
-
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -28,13 +25,24 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.darknightqueen.foodscanapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "918ef391-4250-4a7a-aa6b-dd6d37aff566"
+      }
+    },
+    "owner": "dark-night-queen"
   }
 }
