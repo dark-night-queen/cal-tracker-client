@@ -4,9 +4,10 @@ import { Card } from '@/components/ui/card';
 import { Text } from '@/components/ui/text';
 import { Icon } from '@/components/ui/icon';
 import { Box } from '@/components/ui/box';
+import { VStack } from '@/components/ui/vstack';
 import { useNutrientStore } from '@/store/nutrients-store';
 
-export const MicronutrientCard = () => {
+export const Micronutrient = () => {
   const { micronutrients } = useNutrientStore();
 
   const getColor = (percent: number) => {
@@ -25,12 +26,12 @@ export const MicronutrientCard = () => {
 
       <Box className={styles.micronutrientContainer}>
         {micronutrients.map((nutrient, index) => (
-          <Box key={index} className="items-center gap-1">
+          <VStack key={index} className="items-center gap-1">
             <Text className={`text-[11px] font-bold ${getColor(nutrient.value)}`}>
               {nutrient.value}%
             </Text>
             <Text className={styles.nutrientNameText}>{nutrient.shortName}</Text>
-          </Box>
+          </VStack>
         ))}
       </Box>
     </Card>
@@ -39,8 +40,8 @@ export const MicronutrientCard = () => {
 
 const styles = {
   cardContainer: 'gap-4 flex-1',
-  cardHeader: 'flex-row items-center gap-2',
+  cardHeader: 'items-center gap-2',
   iconColor: 'text-indigo-400',
-  micronutrientContainer: 'flex-row items-center justify-between',
+  micronutrientContainer: 'items-center justify-between',
   nutrientNameText: 'text-xs text-background-400',
 };

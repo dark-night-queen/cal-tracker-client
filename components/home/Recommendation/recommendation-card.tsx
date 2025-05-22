@@ -1,0 +1,19 @@
+import React from "react";
+import { Box, Card, Icon, Text } from "@/components/ui";
+
+type IRecommendationCardProps = {
+  icon: any;
+  className: string;
+  value: string;
+};
+
+export const RecommendationCard = ({ icon, className, value }: IRecommendationCardProps) => {
+  return (
+    <Card>
+      <Box className='items-start gap-3'>
+        <Icon as={icon} className={className} />
+        <Text>{value}</Text>
+      </Box>
+    </Card>
+  );
+};

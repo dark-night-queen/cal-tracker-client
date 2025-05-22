@@ -1,5 +1,4 @@
-import { Card } from '@/components/ui/card';
-import { Text } from '@/components/ui/text';
+import { Card, Text } from '@/components/ui';
 
 export const NoItemAvailable = () => {
   return (

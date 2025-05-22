@@ -1,10 +1,7 @@
 import React from 'react';
 import { Cookie, Wheat, Ham } from 'lucide-react-native';
-import { Box } from '@/components/ui/box';
-import { Card } from '@/components/ui/card';
-import { Icon } from '@/components/ui/icon';
 import { Image } from '@/components/ui/image';
-import { Text } from '@/components/ui/text';
+import { Box, Card, Icon, Text, VStack } from '@/components/ui';
 
 type INutrient = {
   value: number;
@@ -52,33 +49,33 @@ export const LoggedItem = (props: ILoggedItem) => {
   const IconImage = require('@/assets/images/adaptive-icon.png');
 
   return (
-    <Card size="lg" className="mt-4 flex-row items-center gap-4 p-4">
+    <Card size="lg" className="flex-row items-center gap-4 p-4">
       <Image source={IconImage} alt={name} className="h-16 w-16 rounded-lg object-cover" />
 
-      <Box className="flex-1">
-        <Box className="flex-row items-center">
+      <VStack className="flex-1">
+        <Box className="items-center">
           <Text className="flex-1 font-semibold">{name}</Text>
           <Text className="text-xs text-gray-400">{timestamp}</Text>
         </Box>
 
-        <Box className="mt-1 flex-row items-center gap-2">
+        <Box className="mt-1 items-center gap-2">
           <Text className="text-sm">{calories} cal</Text>
           <Text className={scoreColor + ' mx-2 text-sm'}>Score: {score.toFixed(1)}</Text>
         </Box>
 
-        <Box className="flex-row items-center gap-2">
+        <Box className="items-center gap-2">
           {nutrients.map((item) => (
             <Nutrient key={item.name} {...item} />
           ))}
         </Box>
-      </Box>
+      </VStack>
     </Card>
   );
 };
 
 const Nutrient = ({ value, icon, iconColor }: INutrient) => {
   return (
-    <Box className="flex-row items-center gap-1">
+    <Box className="items-center gap-1">
       <Icon as={icon} size="sm" className={iconColor} />
       <Text className="text-sm text-gray-400">{value}g</Text>
     </Box>

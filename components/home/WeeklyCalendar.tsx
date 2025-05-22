@@ -2,11 +2,9 @@ import React, { useMemo } from 'react';
 import moment, { Moment } from 'moment';
 import { useCalendarStore } from '@/store/weekly-calendar';
 
-import { Box } from '../ui/box';
-import { Button, ButtonIcon, ButtonText } from '../ui/button';
-import { Card } from '../ui/card';
-import { ChevronLeftIcon, ChevronRightIcon } from '../ui/icon';
-import { Text } from '../ui/text';
+import { Box, Card, Text } from '@/components/ui';
+import { Button, ButtonIcon, ButtonText } from '@/components/ui/button';
+import { ChevronLeftIcon, ChevronRightIcon } from '@/components/ui/icon';
 
 export const WeeklyCalendar = () => {
   const { activeDate, currentDate, currentWeek, navigateWeek, setActiveDate } = useCalendarStore();
@@ -91,7 +89,7 @@ export const WeeklyCalendar = () => {
 };
 
 const styles = {
-  navContainer: 'flex-row items-center justify-between',
+  navContainer: 'items-center justify-between',
   weekDayButton: 'flex-col items-center m-0 gap-2 px-2 py-3 rounded-xl',
   dateContainer: 'h-10 w-10 items-center justify-center rounded-full',
   weekDayButtonText: 'text-sm font-semibold',

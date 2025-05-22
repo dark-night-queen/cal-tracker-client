@@ -1,14 +1,14 @@
 import React from 'react';
 import { Box } from '@/components/ui/box';
 
-import { HealthScore } from './HealthScore';
-import { MicronutrientCard } from './MicronutrientCard';
+import { HealthScore } from './health-score';
+import { Micronutrient } from './micronutrient';
 
 export const MetricsCard = () => {
   return (
-    <Box className="flex-row gap-4">
+    <Box className="gap-4">
       <HealthScore />
-      <MicronutrientCard />
+      <Micronutrient />
     </Box>
   );
 };

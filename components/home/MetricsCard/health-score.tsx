@@ -5,6 +5,7 @@ import { Text } from '@/components/ui/text';
 import { Icon } from '@/components/ui/icon';
 import { Box } from '@/components/ui/box';
 import { Progress, ProgressGradientTrack } from '@/components/ui/progress';
+import { VStack } from '@/components/ui/vstack';
 import { useNutrientStore } from '@/store/nutrients-store';
 
 export const HealthScore = () => {
@@ -18,7 +19,7 @@ export const HealthScore = () => {
         <Icon as={Info} size="sm" />
       </Box>
 
-      <Box>
+      <VStack>
         <Progress value={healthScore}>
           <ProgressGradientTrack colors={['#ef4444', '#eab308', '#22c55e']} />
         </Progress>
@@ -27,15 +28,15 @@ export const HealthScore = () => {
           <Text className={styles.scoreMetricText}>Poor</Text>
           <Text className={styles.scoreMetricText}>Excellent</Text>
         </Box>
-      </Box>
+      </VStack>
     </Card>
   );
 };
 
 const styles = {
   cardContainer: 'flex-1 gap-4',
-  cardHeader: 'flex-row items-center gap-3',
+  cardHeader: 'items-center gap-3',
   iconColor: 'text-indigo-400',
-  scoreMetricContainer: 'mt-2 flex-row justify-between',
+  scoreMetricContainer: 'mt-2 justify-between',
   scoreMetricText: 'text-xs text-background-400',
 };
