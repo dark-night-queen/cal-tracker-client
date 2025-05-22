@@ -20,7 +20,7 @@ export const HealthScore = () => {
 
       <Box>
         <Progress value={healthScore}>
-          <ProgressGradientTrack />
+          <ProgressGradientTrack colors={['#ef4444', '#eab308', '#22c55e']} />
         </Progress>
 
         <Box className={styles.scoreMetricContainer}>
