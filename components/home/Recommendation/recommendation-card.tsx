@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Card, Icon, Text } from "@/components/ui";
+import React from 'react';
+import { Box, Card, Icon, Text } from '@/components/ui';
 
 type IRecommendationCardProps = {
   icon: any;
@@ -10,7 +10,7 @@ type IRecommendationCardProps = {
 export const RecommendationCard = ({ icon, className, value }: IRecommendationCardProps) => {
   return (
     <Card>
-      <Box className='items-start gap-3'>
+      <Box className="items-start gap-3">
         <Icon as={icon} className={className} />
         <Text className="flex-1 text-sm">{value}</Text>
       </Box>

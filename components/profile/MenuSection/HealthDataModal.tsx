@@ -1,41 +1,44 @@
 import React from 'react';
-import { useNavigation } from 'expo-router';
+import { useNavigation, useRouter } from 'expo-router';
 import { ChevronLeft, Heart } from 'lucide-react-native';
-
-import { Box } from '@/components/ui/box';
-import { Text } from '@/components/ui/text';
-import { Icon } from '@/components/ui/icon';
-import { Card } from '@/components/ui/card';
-import { Button, ButtonIcon } from '@/components/ui/button';
+import { Box, Text, Icon, Card, Button, ButtonIcon, VStack } from '@/components/ui';
 
 export const HealthDataComponent = () => {
   const navigation = useNavigation();
-  const closeComponent = () => navigation.goBack();
+  const router = useRouter();
+
+  const closeComponent = () => {
+    if (navigation.canGoBack()) {
+      navigation.goBack();
+    } else {
+      router.push('/(main)/profile');
+    }
+  };
 
   return (
-    <Box className="h-screen px-5 py-5 dark:bg-gray-900">
+    <VStack className="h-screen px-5 py-5 dark:bg-gray-900">
       {/* Go back btn */}
       <Button variant="ghost" className="self-start rounded-lg p-2" onPress={closeComponent}>
         <ButtonIcon as={ChevronLeft} className="text-gray-400" />
       </Button>
 
       {/* Coming Soon */}
-      <Box className="h-3/4 items-center justify-center gap-8 p-4">
+      <VStack className="h-3/4 items-center justify-center gap-8 p-4">
         <Box className={styles.iconContainer}>
           <Icon as={Heart} className={styles.icon} />
         </Box>
 
-        <Box className="items-center">
+        <VStack className="items-center">
           <Text className={styles.heading}>Health Data Coming Soon</Text>
           <Text className={styles.description}>
             We're working on bringing you comprehensive health tracking features. Monitor your
             vitals, track your progress, and get personalized insights to improve your overall
             well-being.
           </Text>
-        </Box>
+        </VStack>
 
         {/* Features */}
-        <Box className="flex-row gap-4">
+        <Box className="gap-4">
           <Card className={styles.cardContainer}>
             <Box className={`${styles.cardIconContainer} bg-indigo-500/10`}>
               <Icon as={Heart} className="text-indigo-400" />
@@ -57,8 +60,8 @@ export const HealthDataComponent = () => {
             </Text>
           </Card>
         </Box>
-      </Box>
-    </Box>
+      </VStack>
+    </VStack>
   );
 };
 

@@ -33,7 +33,7 @@ export const MacroCircle2 = (props: IMacroCircleProps) => {
   const valueLeft = target - value;
 
   return (
-    <VStack className="flex-[2] items-center justify-center gap-2 max-w-[100px]">
+    <VStack className="max-w-[100px] flex-[2] items-center justify-center gap-2">
       <CircularProgress size={90} width={12} fill={fill}>
         {() => <Text className="text-sm">{valueLeft}</Text>}
       </CircularProgress>

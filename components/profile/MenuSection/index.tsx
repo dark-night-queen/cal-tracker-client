@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'expo-router';
 import { Activity, BarChart2, Heart, User } from 'lucide-react-native';
-
-import { Box } from '@/components/ui/box';
+import { VStack } from '@/components/ui';
 
 import { GhostButton } from '../GhostButton';
 import { Settings } from '../SettingsSection';
@@ -15,7 +14,7 @@ export const Menu = () => {
   const closeActivityModal = () => setShowModal(false);
 
   return (
-    <Box className="gap-4">
+    <VStack className="gap-4">
       <Link href="/analytics" asChild>
         <GhostButton icon={BarChart2} name="Analytics" showArrow={true} />
       </Link>
@@ -37,6 +36,6 @@ export const Menu = () => {
 
       {/* Modals */}
       <ActivityModal showModal={showModal} closeModal={closeActivityModal} />
-    </Box>
+    </VStack>
   );
 };
