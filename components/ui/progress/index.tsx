@@ -161,7 +161,7 @@ const ProgressFilledTrack = React.forwardRef<
 
 const ProgressGradientTrack = React.forwardRef<
   React.ComponentRef<typeof UIProgress.FilledTrack>,
-  IProgressFilledTrackProps
+  React.ComponentProps<typeof LinearGradient>
 >(function ProgressGradientTrack({ className, ...props }, ref) {
   const { size: parentSize, orientation: parentOrientation, value } = useStyleContext(SCOPE);
 
@@ -172,7 +172,6 @@ const ProgressGradientTrack = React.forwardRef<
   return (
     <LinearGradient
       ref={ref}
-      colors={['#ef4444', '#eab308', '#22c55e']}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
       className={progressFilledTrackStyle({
