@@ -12,7 +12,7 @@ export const RecommendationCard = ({ icon, className, value }: IRecommendationCa
     <Card>
       <Box className='items-start gap-3'>
         <Icon as={icon} className={className} />
-        <Text>{value}</Text>
+        <Text className="flex-1 text-sm">{value}</Text>
       </Box>
     </Card>
   );

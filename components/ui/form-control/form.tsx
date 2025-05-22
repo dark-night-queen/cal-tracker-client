@@ -31,7 +31,7 @@ export const FormElement = ({ label, error, children }: IFormProps) => {
       isDisabled={false}
       isReadOnly={false}
       isRequired={false}
-      className="w-full space-y-1">
+      className="w-full gap-1">
       <FormControlLabel>
         <FormControlLabelText>{label}</FormControlLabelText>
       </FormControlLabel>

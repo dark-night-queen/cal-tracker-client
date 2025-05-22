@@ -1,4 +1,4 @@
-import { Box } from '../ui/box';
+import { VStack } from '@/components/ui/vstack';
 import { DailyReport } from './DailyReport';
 import { MacroCard } from './MacroCard';
 import { MetricsCard } from './MetricsCard';
@@ -9,16 +9,16 @@ import { WeeklyCalendar } from './WeeklyCalendar';
 
 export const HomeComponent = () => {
   return (
-    <Box className="gap-8 px-5 pb-8 dark:bg-gray-900">
-      <Box className="gap-4">
+    <VStack className="gap-8 px-5 pb-8 dark:bg-gray-900">
+      <VStack className="gap-4">
         <WeeklyCalendar />
         <MacroCard />
         <MetricsCard />
         <ScannerButton />
-      </Box>
+      </VStack>
       <RecentlyLoggedItem />
       <DailyReport />
       <PersonalizedRecommendation />
-    </Box>
+    </VStack>
   );
 };
